@@ -24,13 +24,16 @@
           <img src="icons/search.svg" alt="" />
           <input type="text" placeholder="search" />
         </div>
-        <div class="nav-user-icon online">
+        <div class="nav-user-icon online" onclick="settingMenuToggle()">
           <img src="icons/usericon.png" alt="" />
         </div>
       </div>
 
       <!-- ---------setting-menu-------------  -->
       <div class="setting-menu">
+        <div id="dark-mode-btn" class="dark-btn-on">
+          <span></span>
+        </div>
         <div class="setting-menu-inner">
           <div class="user-profile">
             <img src="icons/usericon.png">
@@ -232,5 +235,6 @@
 
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

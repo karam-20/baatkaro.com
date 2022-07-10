@@ -5,14 +5,26 @@
   box-sizing: border-box;
 }
 
+:root {
+  --body-color: #efefef;
+  --nav-color: #1876f2;
+  --bg-color: #fff;
+}
+.dark-theme {
+  --body-color: #0a0a0a;
+  --nav-color: #000;
+  --bg-color: #000;
+}
+
 body {
-  background: #efefef;
+  background: var(--body-color);
+  transition: background 0.3s;
 }
 nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #1876f2;
+  background: var(--nav-color);
   padding: 5px 5%;
   position: sticky;
   top: 0;
@@ -96,7 +108,7 @@ nav {
   position: sticky;
   top: 70px;
   align-self: flex-start;
-  background: #fff;
+  background: var(--bg-color);
   padding: 20px;
   border-radius: 4px;
   color: #626262;
@@ -265,7 +277,7 @@ nav {
 }
 
 .write-post-container {
-  background: #fff;
+  background: var(--bg-color);
   border-radius: 10px;
   width: 100%;
   padding: 20px;
@@ -303,6 +315,7 @@ nav {
   background: transparent;
   font-size: 14px;
   resize: none;
+  color: #626262;
 }
 
 .add-post-links {
@@ -324,7 +337,7 @@ nav {
 }
 
 .post-container {
-  background: #fff;
+  background: var(--bg-color);
   border-radius: 10px;
   width: 100%;
   padding: 20px;
@@ -392,14 +405,18 @@ nav {
   position: absolute;
   width: 90%;
   max-width: 350px;
-  height: 350px;
-  background: #fff;
+  background: var(--bg-color);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   border-radius: 4px;
   overflow: hidden;
   top: 60px;
   right: 5%;
   color: #626262;
+  max-height: 0;
+  transition: max-height 0.3s;
+}
+.setting-menu-height {
+  max-height: 380px;
 }
 .user-profile a {
   text-decoration: none;
@@ -433,4 +450,28 @@ nav {
   flex: 1;
   align-items: center;
   justify-content: space-between;
+}
+#dark-mode-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgb(41, 39, 39);
+  width: 45px;
+  border-radius: 15px;
+  padding: 2px 3px;
+  cursor: pointer;
+  display: flex;
+  transition: padding-left 0.5s, background 0.5s;
+}
+
+#dark-mode-btn span {
+  width: 18px;
+  height: 18px;
+  background: var(--bg-color);
+  border-radius: 50%;
+  display: inline-block;
+}
+#dark-mode-btn.dark-btn-on {
+  padding-left: 24px;
+  background: #9a9a9a;
 }
